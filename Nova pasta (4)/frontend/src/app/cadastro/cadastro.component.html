@@ -1,0 +1,183 @@
+<form class="example-form">
+  <mat-toolbar>
+    <div class="container">
+      <div class="title">
+        <div>Cadastro de novo(a) Cliente</div>
+      </div>
+    </div>
+  </mat-toolbar>
+</form>
+
+<form class="example-form">
+  <table class="example-full-width" cellspacing="0">
+    <tr>
+      <td>
+        <mat-card-header>
+          <mat-card-title>Nome</mat-card-title>
+        </mat-card-header>
+        <mat-form-field class="example-full-width">
+          <mat-label></mat-label>
+          <input matInput />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-card-header>
+          <mat-card-title>
+            <mat-label>Email</mat-label>
+          </mat-card-title>
+        </mat-card-header>
+        <form class="example-form">
+          <mat-form-field class="example-full-width">
+            <mat-label></mat-label>
+            <input
+              type="email"
+              matInput
+              [formControl]="emailFormControl"
+              placeholder="Ex. pat@example.com"
+            />
+            @if (emailFormControl.hasError('email') &&
+            !emailFormControl.hasError('required')) {
+            <mat-error>Please enter a valid email address</mat-error>
+            } @if (emailFormControl.hasError('required')) {
+            <mat-error>Email is <strong>required</strong></mat-error>
+            }
+          </mat-form-field>
+        </form>
+      </td>
+    </tr>
+  </table>
+
+  <table class="example-full-width" cellspacing="0">
+    <tr>
+      <td>
+        <mat-card-header>
+          <mat-card-title>CPF</mat-card-title>
+        </mat-card-header>
+        <mat-form-field class="example-full-width">
+          <mat-label></mat-label>
+          <input matInput placeholder="000000-000" value="000000-000" />
+        </mat-form-field>
+      </td>
+
+      <td>
+        <mat-card-header>
+          <mat-card-title>RG</mat-card-title>
+        </mat-card-header>
+        <mat-form-field class="example-full-width">
+          <mat-label></mat-label>
+          <input matInput placeholder="00.000.000-0" value="00.000.000-0" />
+        </mat-form-field>
+      </td>
+
+      <td>
+        <mat-card-header>
+          <mat-card-title>Órgão Expididor</mat-card-title>
+        </mat-card-header>
+        <mat-form-field class="example-full-width">
+          <mat-label></mat-label>
+          <input matInput placeholder="Órgão Expedidor" value="SSP" />
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+
+  <table class="example-full-width" cellspacing="0">
+    <tr>
+      <td>
+        <mat-card-header>
+          <mat-card-title>CEP</mat-card-title>
+        </mat-card-header>
+      </td>
+
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label></mat-label>
+          <input matInput placeholder="00000-000" value="00000-000" />
+        </mat-form-field>
+      </td>
+      <td>
+        <section>
+          <div class="example-button-row">
+            <button mat-flat-button>Buscar</button>
+          </div>
+        </section>
+      </td>
+    </tr>
+  </table>
+
+  <table class="example-full-width" cellspacing="0">
+    <tr>
+      <td>
+        <mat-card-header>
+          <mat-card-title>Logradouro</mat-card-title>
+        </mat-card-header>
+        <mat-form-field class="example-full-width">
+          <mat-label></mat-label>
+          <input matInput placeholder="Ex. San Francisco" />
+        </mat-form-field>
+      </td>
+
+      <td>
+        <mat-card-header>
+          <mat-card-title>Número</mat-card-title>
+        </mat-card-header>
+        <mat-form-field class="example-full-width">
+          <mat-label></mat-label>
+          <input matInput placeholder="Ex. San Francisco" />
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+
+  <table class="example-full-width" cellspacing="0">
+    <tr>
+      <td>
+        <mat-card-header>
+          <mat-card-title>Complemento</mat-card-title>
+        </mat-card-header>
+        <mat-form-field class="example-full-width">
+          <mat-label></mat-label>
+          <input matInput placeholder="Ex. San Francisco" />
+        </mat-form-field>
+      </td>
+
+      <td>
+        <mat-card-header>
+          <mat-card-title>Bairro</mat-card-title>
+        </mat-card-header>
+        <mat-form-field class="example-full-width">
+          <mat-label></mat-label>
+          <input matInput placeholder="Ex. San Francisco" />
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+  <table class="example-full-width" cellspacing="0">
+    <tr>
+      <td>
+        <mat-card-header>
+          <mat-card-title>Cidade</mat-card-title>
+        </mat-card-header>
+        <mat-form-field class="example-full-width">
+          <mat-label></mat-label>
+          <input matInput placeholder="Ex. San Francisco" />
+        </mat-form-field>
+      </td>
+
+      <td>
+        <mat-card-header>
+          <mat-card-title>UF</mat-card-title>
+        </mat-card-header>
+        <mat-form-field>
+          <mat-label>UF</mat-label>
+          <mat-select>
+            <mat-option>None</mat-option>
+            @for (UF of UF; track UF) {
+            <mat-option [value]="UF">{{ UF }}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+</form>
